@@ -80,6 +80,24 @@
     // 7. sort Exercise
     // Sort the people alphabetically by last name
 
+    // solo para este caso
+    function sortPeople(array){
+      return array.sort();
+    }
+
+    console.table(sortPeople(people));
+
+    // por si necesito algo más específico
+    function sortPeople(array){
+      return array.sort((a, b) => {
+        const [aLastName, aName] = a.split(",");
+        const [bLastName, bName] = b.split(",");
+        return aLastName - bLastName; 
+      })
+    }
+
+    console.table(sortPeople(people));
+    
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
